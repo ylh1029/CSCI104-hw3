@@ -49,6 +49,9 @@ struct Node
  */
 void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot);
 
+//returns true if val is larger than pivot
+bool isLarger(int val, int pivot);
+
 /**
  * Given a linked list pointed to by head, removes (filters out) nodes
  * whose value does not meet the criteria given by the predicate
