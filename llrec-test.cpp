@@ -27,7 +27,6 @@ void print(Node* head);
  */
 void dealloc(Node* head);
 
-
 Node* readList(const char* filename)
 {
     Node* h = NULL;
@@ -67,9 +66,11 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
-
-
-
+struct Compare{
+    bool operator()(int val){
+        return (val % 2 == 1);
+    }
+};
 
 int main(int argc, char* argv[])
 {
@@ -89,9 +90,14 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
-    llpivot(head, smaller, larger, 5);
-    print(smaller);
-    print(larger);
+    
+    // llpivot(head, smaller, larger, 5);
+    // print(smaller);
+    // print(larger);
+    // print(head);
+
+    Compare a;
+    head = llfilter(head, a);
     print(head);
     
     return 0;
