@@ -89,7 +89,7 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
-    llpivot(head, smaller, larger, 5);
+    llpivot(head, smaller, larger, 10);
     print(smaller);
     print(larger);
     print(head);
