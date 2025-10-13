@@ -10,7 +10,6 @@ bool isLarger(int val, int pivot){
 
 void llpivot (Node*& head, Node*& smaller, Node*& larger, int pivot){
     if(head != nullptr){
-        Node* temp;
         if(isLarger(head->val, pivot)){
             larger = head;
             head = head -> next;
