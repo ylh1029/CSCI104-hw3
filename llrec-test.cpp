@@ -44,9 +44,10 @@ Node* readList(const char* filename)
 
 void print(Node* head)
 {
-    while(head) {
-        cout << head->val << " ";
-        head = head->next;
+    Node* temp = head;
+    while(temp != nullptr) {
+        cout << temp->val << " ";
+        temp = temp->next;
     }
     cout << endl;
 }
@@ -96,9 +97,20 @@ int main(int argc, char* argv[])
     // print(larger);
     // print(head);
 
-    Compare a;
-    head = llfilter(head, a);
-    print(head);
+    Node* list = nullptr;
+    cout << "Original list: ";
+    print(list);
+	Node* small = (Node*) &list; // set to a non-null address
+	Node* large = (Node*) &list; // set to a non-null address
+	llpivot(list, small, large, 42);
+    print(small);
+    print(large);
+    print(list);
+
+    
+    // Compare a;
+    // head = llfilter(head, a);
+    // print(head);
     
     return 0;
 
